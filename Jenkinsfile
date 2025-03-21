@@ -18,36 +18,37 @@ pipeline {
             steps {
                 script {
                     def htmlContent = """
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <title>Jenkins Pipeline Report</title>
-                        <style>
-                            body { font-family: Arial, sans-serif; margin: 40px; }
-                            h1 { color: #4CAF50; }
-                            table { border-collapse: collapse; width: 100%; margin-top: 20px; }
-                            th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
-                            th { background-color: #f2f2f2; }
-                        </style>
-                    </head>
-                    <body>
-                        <h1>Pipeline Execution Report</h1>
-                        <table>
-                            <tr>
-                                <th>Stage</th>
-                                <th>Status</th>
-                            </tr>
-                            <tr>
-                                <td>Build</td>
-                                <td>Success</td>
-                            </tr>
-                            <tr>
-                                <td>Test</td>
-                                <td>Success</td>
-                            </tr>
-                        </table>
-                    </body>
-                    </html>
+                   <html>
+	<head>
+	<title>User Registration Form</title>
+	</head>
+	<body>
+		<h1>Registration form</h1>
+		<form action="registration.html"method="post">
+			<img src="vbit-logo.png"><br/>
+			Firstname<br>
+			<input type="text"name="fname"><br/>
+			Lastname<br>
+			<input type="text"name="lname"><br/>
+			Email<br>
+			<input type="text"name="email"><br/>
+			Age<br>
+			<input type="number"name="age"><br/>
+			Phone number<br>
+			<input type="digit"name="phnumber"><br/>
+			Gender<br>
+			male
+			<input type="radio"name="gender" value="male">
+			female
+			<input type="radio"name="gender" value="female">
+			others
+			<input type="radio"name="gender" value="others">
+			<br/>
+			<input type="submit"value="Register"><br/>
+		</form>
+	</body>
+</html>
+
                     """
 
                     writeFile file: 'report.html', text: htmlContent
